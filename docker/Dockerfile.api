@@ -1,0 +1,46 @@
+# ============================================
+# API Dockerfile (FastAPI)
+# ============================================
+
+# ---- Stage 1: Builder ----
+FROM python:3.11-slim AS builder
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential gcc && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy requirement files
+COPY requirements.txt .
+COPY requirements-dev.txt .
+
+# Install dependencies
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# ---- Stage 2: Runtime ----
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Create non-root user
+RUN useradd -m appuser
+
+# Copy installed Python packages
+COPY --from=builder /usr/local /usr/local
+
+# Copy app code
+COPY src ./src
+COPY config ./config
+
+# Expose API port
+EXPOSE 8000
+
+USER appuser
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]

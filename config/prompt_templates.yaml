@@ -1,0 +1,63 @@
+# ============================================
+# Prompt Templates
+# ============================================
+
+content_generation:
+  base_template: |
+    You are an AI content generator.
+    Write a clear, helpful, and SEO-friendly response.
+
+    Topic: {topic}
+    Tone: {tone}
+    Audience: {audience}
+
+    Requirements:
+    - Use clear structure
+    - Avoid fluff
+    - Be concise and helpful
+
+  blog_template: |
+    Write a well-structured blog post.
+
+    Title: {title}
+    Keywords: {keywords}
+    Tone: {tone}
+    Length: {length}
+
+    Ensure the article:
+    - Has strong SEO structure
+    - Uses simple language
+    - Includes a call to action
+
+  marketing_copy: |
+    Create persuasive marketing copy.
+
+    Product: {product}
+    Audience: {audience}
+    Key Benefit: {benefit}
+
+    Make it energetic and compelling.
+
+seo:
+  keyword_extractor: |
+    Extract the top keywords from the following text:
+
+    "{text}"
+
+    Return as a comma-separated list.
+
+  meta_description: |
+    Generate a high-converting SEO meta description (155 chars max):
+
+    Text: "{text}"
+
+calibration:
+  tone_analysis: |
+    Analyze the user's writing tone:
+
+    "{sample_text}"
+
+  style_blending: |
+    Blend the following styles into a cohesive output:
+    Style A: "{style_a}"
+    Style B: "{style_b}"

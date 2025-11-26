@@ -1,50 +1,166 @@
-Here is a **clean, simple, ready-to-ship README.md** for your current FastAPI starter app + Docker + GitHub Actions workflow.
+Absolutely — here is a **clean, modern, developer-friendly README** that documents:
 
-It is written to be copy-paste ready and works perfectly with your current folder structure & pipeline.
+* Folder structure
+* Requirements
+* Docker setup
+* Dev workflow
+* CI/CD workflows
+* How to run tests
+* How to extend the project
 
----
-
-# 📘 FastAPI Starter App (Docker + GitHub Actions CI/CD)
-
-This is a minimal FastAPI application packaged with Docker and automatically built/published using GitHub Actions.
-
-Perfect for microservices, quick experiments, and CI/CD testing.
-
----
-
-## 🚀 Features
-
-* FastAPI application (Python 3.11)
-* Lightweight Docker build (multi-stage)
-* Non-root user for security
-* GitHub Actions CI/CD workflow
-* Auto-build & auto-push to GitHub Container Registry (GHCR)
-* Tagged images for branches, releases, and commits
+This README is tailored **specifically for your starter architecture** and reflects everything you've built so far.
 
 ---
 
-## 📁 Project Structure
+# 🚀 **AICONTENT — Modular AI Content Service Starter**
+
+AICONTENT is a production-ready starter template for building modular AI-powered microservices using **FastAPI**, **Celery**, **Redis**, **Docker**, and **GitHub Actions CI/CD**.
+It is designed to scale across content generation, SEO analysis, image suggestions, calibration, and LLM provider abstraction.
+
+This starter is ideal for:
+
+* AI content generation platforms
+* Multi-module API services
+* LLM orchestration systems
+* Developer teams needing clean architecture & CI/CD from day one
+
+---
+
+# 📁 **Project Structure**
 
 ```
-.
-├── Dockerfile
-├── README.md
-├── app
-│   ├── __init__.py
-│   └── main.py
-└── requirements.txt
+aicontent/
+│
+├── config/                     # Configuration layer
+│   ├── settings.py
+│   ├── model_config.yaml
+│   ├── prompt_templates.yaml
+│   └── logging_config.yaml
+│
+├── src/                        # Application source code
+│   ├── main.py                 # FastAPI entrypoint
+│   ├── celery_app.py           # Celery configuration
+│   ├── database.py
+│   ├── dependencies.py
+│   │
+│   ├── llm/                    # LLM Provider Abstraction Layer
+│   │   ├── base.py
+│   │   ├── factory.py
+│   │   ├── openai_client.py
+│   │   ├── anthropic_client.py
+│   │   └── ollama_client.py
+│   │
+│   ├── content/                # Content Generation Module
+│   │   ├── router.py
+│   │   ├── schemas.py
+│   │   ├── tasks.py
+│   │   ├── services/
+│   │   ├── prompt_engineering/
+│   │   └── processors/
+│   │
+│   ├── calibration/            # Tone, style & user-personalization
+│   ├── images/                 # Image suggestion module
+│   ├── seo/                    # SEO analysis module
+│   ├── utils/                  # Shared utilities
+│   └── handlers/               # Error & event handlers
+│
+├── data/                       # Versioned prompts, cached outputs
+│
+├── examples/                   # Python usage examples
+│
+├── notebooks/                  # Experimentation & testing
+│
+├── tests/                      # Full pytest suite
+│
+├── docker/
+│   ├── Dockerfile.api          # Builds API image
+│   ├── Dockerfile.worker       # Builds Celery worker image
+│
+├── docker-compose.yml          # Local development stack
+│
+├── requirements.txt            # Core production dependencies
+├── requirements-dev.txt        # Dev & tooling dependencies
+│
+├── .gitignore
+├── .dockerignore
+├── CHANGELOG.md
+└── README.md                   # You're reading this
 ```
 
 ---
 
-## ▶️ Running Locally (Without Docker)
+# 🔧 **Dependencies**
+
+## 📌 **Production dependencies (`requirements.txt`)**
+
+Includes:
+
+* **FastAPI** (API framework)
+* **Uvicorn** (ASGI server)
+* **Pydantic / Pydantic-Settings**
+* **Celery** (async tasks)
+* **Redis** (broker/backend)
+* **PyYAML** (config loader)
+* **httpx + requests**
+* **pytest** (minimal testing dependencies)
+* **loguru** (logging)
+
+This is enough to run the entire stack: API + worker + Redis.
+
+---
+
+## 📌 **Development dependencies (`requirements-dev.txt`)**
+
+Includes:
+
+* Black (formatter)
+* Ruff (linter)
+* isort (import sorter)
+* mypy (type checking)
+* pytest-cov
+* flake8 (optional linting)
+* bandit & safety (security scanning)
+* pre-commit hooks
+
+These tools give you:
+
+* Clean code
+* Consistent formatting
+* Fast CI checking
+* Safe and typed Python
+* High-quality development workflow
+
+---
+
+# 🐳 **Docker Setup**
+
+The project includes:
+
+### **API Dockerfile**
+
+Located in `docker/Dockerfile.api`
+Builds a lightweight FastAPI production image.
+
+### **Worker Dockerfile**
+
+Located in `docker/Dockerfile.worker`
+Runs Celery workers for async tasks.
+
+### **docker-compose.yml**
+
+Supports:
+
+* API
+* Worker
+* Redis
+
+Start everything:
 
 ```bash
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+docker-compose up --build
 ```
 
-Visit:
+API available at:
 
 ```
 http://localhost:8000
@@ -52,112 +168,121 @@ http://localhost:8000
 
 ---
 
-## 🐳 Running with Docker
+# 🚦 **Running the Project (Dev Mode)**
 
-### **1. Build the Docker image**
-
-```bash
-docker build -t fastapi-starter .
-```
-
-### **2. Run the container**
+Run API locally:
 
 ```bash
-docker run -p 8000:8000 fastapi-starter
+uvicorn src.main:app --reload
 ```
 
-Now visit:
-
-```
-http://localhost:8000
-```
-
----
-
-## 🔧 Dockerfile Overview
-
-* **Stage 1** installs dependencies
-* **Stage 2** copies runtime packages + app code
-* Runs under a safe non-root `appuser`
-* Uses Uvicorn to serve FastAPI
-
----
-
-## 🚦 GitHub Actions: Automatic Docker Builds
-
-The pipeline is located at:
-
-```
-.github/workflows/build.yml
-```
-
-What it does:
-
-* Builds a Docker image for every push and PR
-* Tags images automatically (branch, semver, SHA)
-* Pushes images to **GitHub Container Registry (GHCR)**
-
-Your image will be available at:
-
-```
-ghcr.io/codedsultan/fastapi-starter:<tag>
-```
-
-Examples:
-
-```
-ghcr.io/codedsultan/fastapi-starter:latest
-ghcr.io/codedsultan/fastapi-starter:develop
-ghcr.io/codedsultan/fastapi-starter:sha-abcdef
-```
-
----
-
-## 🧪 Test the API
-
-After running:
+Run worker locally:
 
 ```bash
-curl http://localhost:8000/
-```
-
-Expected response:
-
-```json
-{"message": "FastAPI app running in Docker!"}
+celery -A src.celery_app.celery worker --loglevel=INFO
 ```
 
 ---
 
-## 📦 Pushing a Release Tag
+# 🧪 **Running Tests**
 
-If you create a git tag like:
+All tests are inside `tests/`.
 
+Run entire test suite:
+
+```bash
+pytest -q
 ```
-git tag v1.0.0
-git push origin v1.0.0
-```
 
-The workflow will build and publish an image tagged:
+Run with coverage:
 
-```
-ghcr.io/codedsultan/fastapi-starter:1.0.0
-ghcr.io/codedsultan/fastapi-starter:v1.0.0
-ghcr.io/codedsultan/fastapi-starter:1.0
+```bash
+pytest --cov=src
 ```
 
 ---
 
-## 📄 License
+# 🚀 **CI/CD Workflows (GitHub Actions)**
 
-MIT
+This starter includes three workflows:
+
+### 1️⃣ **Build & Push (build.yml)**
+
+* Builds Docker images
+* Tags using metadata
+* Pushes to GitHub Container Registry
+
+### 2️⃣ **Test (test.yml)**
+
+Runs:
+
+* ruff
+* black
+* mypy
+* pytest
+* coverage
+
+### 3️⃣ **Deploy (deploy.yml)**
+
+Deploys to a VPS via SSH using docker-compose.
+
+Secrets required:
+
+* `VPS_HOST`
+* `VPS_USER`
+* `VPS_SSH_KEY`
 
 ---
 
-If you want, I can generate:
+# 🧱 **Development Workflow**
 
-✅ A docker-compose file
-✅ A production version (gunicorn + uvicorn workers)
-✅ A Kubernetes manifest
-✅ A Makefile for common commands
-Just tell me.
+Here’s the recommended workflow:
+
+### ✔ Step 1 — Write code inside `src/`
+
+Each module is isolated for clarity (content, SEO, images, etc.).
+
+### ✔ Step 2 — Add tests in `tests/`
+
+Everything should be tested.
+
+### ✔ Step 3 — Format code
+
+```bash
+black .
+ruff check .
+mypy src
+```
+
+### ✔ Step 4 — Run docker build
+
+```bash
+docker-compose up --build
+```
+
+### ✔ Step 5 — Push changes
+
+Triggers GitHub Actions:
+
+* Lint
+* Test
+* Build
+* Deploy (main branch)
+
+---
+
+# 🧩 **Extending the Project**
+
+To add a new module:
+
+1. Create folder under `src/newmodule`
+2. Add:
+
+   * `router.py`
+   * `schemas.py`
+   * `services/`
+   * `tasks.py` (if using Celery)
+3. Register router in `src/main.py`
+4. Add tests in `tests/newmodule/`
+
+The architecture is fully modular.

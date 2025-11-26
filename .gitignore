@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# Byte-compiled / optimized files
+*.so
+
+# Logs
+*.log
+logs/
+
+# Unit test folders
+htmlcov/
+.coverage
+.coverage.*
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+**/.ipynb_checkpoints/
+
+# Build / Packaging
+build/
+dist/
+*.egg-info/
+
+# Data folders
+data/cache/
+data/outputs/
+data/embeddings/
+
+# Docker
+docker-compose.override.yml
+docker-runtime/
+docker-volume/
+
+# Coverage
+coverage.xml
+
+# Notebooks
+notebooks/
+
+# Ignore local overrides
+config/local_*
+
+# 🔥 Ignore everything copied for Docker
+docker-compose.yml
+

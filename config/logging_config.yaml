@@ -1,0 +1,30 @@
+# ============================================
+# Logging Configuration
+# ============================================
+
+version: 1
+
+# Default Loguru settings for the app
+loguru:
+  handlers:
+
+    - sink: "logs/app.log"
+      level: "INFO"
+      rotation: "10 MB"
+      retention: "7 days"
+      compression: "zip"
+      format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+
+    - sink: "logs/errors.log"
+      level: "ERROR"
+      rotation: "5 MB"
+      retention: "14 days"
+      compression: "zip"
+      backtrace: true
+      diagnose: true
+
+  # Enable JSON logs for production deployments
+  json_handler:
+    sink: "logs/structured.json"
+    level: "INFO"
+    serialize: true

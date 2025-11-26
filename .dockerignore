@@ -1,0 +1,65 @@
+# ============================
+# Python cache + compiled files
+# ============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+.env.*
+
+# ============================
+# Local development files
+# ============================
+*.log
+*.db
+*.sqlite3
+
+# Ignore local settings (optional)
+config/local_*
+
+# ============================
+# Tests (not needed in images)
+# ============================
+tests/
+pytest.ini
+
+# ============================
+# Project generated files
+# ============================
+data/cache/
+data/outputs/
+data/embeddings/
+data/prompts/**/generated_*
+
+# ============================
+# Git & Editor Specific
+# ============================
+.git/
+.gitignore
+.gitattributes
+
+.vscode/
+.idea/
+*.swp
+
+# ============================
+# Docker build leftovers
+# ============================
+docker-compose.yml
+docker-compose*.yaml
+
+# ============================
+# OS & Misc
+# ============================
+.DS_Store
+Thumbs.db
+
+# ============================
+# Jupyter notebooks (optional)
+# ============================
+notebooks/
+**/*.ipynb_checkpoints/

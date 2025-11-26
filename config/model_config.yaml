@@ -1,0 +1,33 @@
+# ============================================
+# LLM Model Configuration
+# ============================================
+
+default_provider: "openai"
+
+providers:
+
+  openai:
+    model: "gpt-4o-mini"
+    temperature: 0.7
+    max_tokens: 1024
+    timeout: 30
+    base_url: "https://api.openai.com/v1"
+
+  anthropic:
+    model: "claude-3-sonnet"
+    temperature: 0.7
+    max_tokens: 1024
+    timeout: 30
+    base_url: "https://api.anthropic.com/v1"
+
+  ollama:
+    model: "mixtral:8x7b"
+    temperature: 0.6
+    max_tokens: 1024
+    timeout: 60
+    base_url: "http://localhost:11434"
+
+# Optional safety settings (extend later)
+safety:
+  profanity_filter: true
+  hallucination_guardrails: true
