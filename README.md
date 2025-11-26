@@ -100,15 +100,15 @@ What it does:
 Your image will be available at:
 
 ```
-ghcr.io/codedsultan/aicontent:<tag>
+ghcr.io/codedsultan/fastapi-starter:<tag>
 ```
 
 Examples:
 
 ```
-ghcr.io/codedsultan/aicontent:latest
-ghcr.io/codedsultan/aicontent:develop
-ghcr.io/codedsultan/aicontent:sha-abcdef
+ghcr.io/codedsultan/fastapi-starter:latest
+ghcr.io/codedsultan/fastapi-starter:develop
+ghcr.io/codedsultan/fastapi-starter:sha-abcdef
 ```
 
 ---
@@ -141,9 +141,9 @@ git push origin v1.0.0
 The workflow will build and publish an image tagged:
 
 ```
-ghcr.io/codedsultan/aicontent:1.0.0
-ghcr.io/codedsultan/aicontent:v1.0.0
-ghcr.io/codedsultan/aicontent:1.0
+ghcr.io/codedsultan/fastapi-starter:1.0.0
+ghcr.io/codedsultan/fastapi-starter:v1.0.0
+ghcr.io/codedsultan/fastapi-starter:1.0
 ```
 
 ---
