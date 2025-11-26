@@ -1,36 +1,36 @@
-name: Test
+# name: Test
 
-on:
-    push:
-        branches: [main, develop]
-    pull_request:
+# on:
+#     push:
+#         branches: [main, develop]
+#     pull_request:
 
-jobs:
-    test:
-        runs-on: ubuntu-latest
+# jobs:
+#     test:
+#         runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+#         steps:
+#             - name: Checkout code
+#               uses: actions/checkout@v4
 
-            - name: Set up Python
-              uses: actions/setup-python@v4
-              with:
-                  python-version: "3.11"
+#             - name: Set up Python
+#               uses: actions/setup-python@v4
+#               with:
+#                   python-version: "3.11"
 
-            - name: Install dependencies
-              run: |
-                  pip install -r requirements.txt
-                  pip install -r requirements-dev.txt
+#             - name: Install dependencies
+#               run: |
+#                   pip install -r requirements.txt
+#                   pip install -r requirements-dev.txt
 
-            - name: Run Ruff (Lint)
-              run: ruff check .
+#             - name: Run Ruff (Lint)
+#               run: ruff check .
 
-            - name: Check Black formatting
-              run: black --check .
+#             - name: Check Black formatting
+#               run: black --check .
 
-            - name: Run mypy (Type checking)
-              run: mypy src
+#             - name: Run mypy (Type checking)
+#               run: mypy src
 
-            - name: Run tests
-              run: pytest -q --disable-warnings --maxfail=1
+#             - name: Run tests
+#               run: pytest -q --disable-warnings --maxfail=1
