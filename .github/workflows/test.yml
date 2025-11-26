@@ -1,18 +1,17 @@
-# name: Test
+name: Test
 
-# on:
-#     push:
-#         branches: [main, develop]
-#     pull_request:
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
 
-# jobs:
-#     test:
-#         runs-on: ubuntu-latest
+jobs:
+    test:
+        runs-on: ubuntu-latest
 
-#         steps:
-#             - name: Checkout code
-#               uses: actions/checkout@v4
-
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 #             - name: Set up Python
 #               uses: actions/setup-python@v4
 #               with:
