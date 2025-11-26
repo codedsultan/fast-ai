@@ -1,14 +1,3 @@
-Absolutely — here is an updated **professional, production-grade README.md** tailored to your project, including:
-
-✔ Updated folder structure
-✔ Explanation of new dependencies
-✔ Dev workflow (pre-commit, formatting, tests)
-✔ Docker + CI/CD explanations
-✔ API + worker architecture
-✔ Running locally and in production
-
----
-
 # ⭐ **AICONTENT – Modular FastAPI AI Service Starter**
 
 A fully structured, production-ready FastAPI + Celery microservice template for AI-powered workloads.
