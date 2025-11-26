@@ -12,7 +12,7 @@ on:
 
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: codedsultan/aicontent
+    IMAGE_NAME: codedsultan/fastapi-starter
 
 jobs:
     build:
