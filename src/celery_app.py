@@ -2,7 +2,7 @@
 
 import os
 
-from celery import Celery
+from celery import Celery  # type: ignore
 
 # ---------------------------------------------------------------------
 # Load environment variables for broker and backend
