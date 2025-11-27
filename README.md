@@ -1,9 +1,57 @@
-# ⭐ **AICONTENT – Modular FastAPI AI Service Starter**
+# **Fast AI – Modular FastAPI AI Service Starter**
 
 A fully structured, production-ready FastAPI + Celery microservice template for AI-powered workloads.
-This project provides a scalable foundation for LLM content generation, background processing, SEO analysis, image suggestion, and calibration pipelines.
+This project provides a scalable foundation for LLM content generation, background processing,  image generation, and calibration pipelines.
 
 Designed for **containerized deployments**, **GitHub Actions**, and **Ansible orchestration**.
+
+---
+
+# ⚠️ **Project Status & Usage Notice**
+
+This project is **experimental** and was created for **personal use**, exploration, and rapid prototyping.
+
+However, you’re **welcome to use it**, fork it, or contribute if you find it helpful.
+
+If this repo saves you time or inspires your own work:
+
+⭐ **Please consider giving it a star — it really helps!**
+
+If you’d like to support the project:
+
+☕ **Buy me a coffee:** [https://buymeacoffee.com/codesultan](https://buymeacoffee.com/codesultan)
+
+If you run into issues, bugs, or have feature requests:
+
+📬 **Open an issue on GitHub**
+or
+📧 **Contact me directly:** [codesultan369@gmail.com](mailto:codesultan369@gmail.com)
+
+---
+
+<p align="center">
+
+  <!-- Stars -->
+  <a href="https://github.com/codedsultan/fast-ai/stargazers">
+    <img src="https://img.shields.io/github/stars/codedsultan/fast-ai?style=for-the-badge" alt="Stars Badge"/>
+  </a>
+
+  <!-- License -->
+  <a href="https://github.com/codedsultan/fast-ai/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/codedsultan/fast-ai?style=for-the-badge" alt="License Badge"/>
+  </a>
+
+  <!-- Build / CI -->
+  <a href="https://github.com/codedsultan/fast-ai/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/codedsultan/fast-ai/build.yml?style=for-the-badge&logo=github" alt="CI Badge"/>
+  </a>
+
+  <!-- Buy Me a Coffee -->
+  <a href="https://buymeacoffee.com/codesultan">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="BuyMeACoffee Badge"/>
+  </a>
+
+</p>
 
 ---
 
