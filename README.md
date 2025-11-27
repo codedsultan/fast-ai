@@ -31,27 +31,24 @@ or
 
 <p align="center">
 
-  <!-- Stars -->
-  <a href="https://github.com/codedsultan/fast-ai/stargazers">
-    <img src="https://img.shields.io/github/stars/codedsultan/fast-ai?style=for-the-badge" alt="Stars Badge"/>
-  </a>
+<a href="https://github.com/codedsultan/fast-ai/stargazers">
+  <img src="https://img.shields.io/github/stars/codedsultan/fast-ai?style=for-the-badge" alt="Stars Badge"/>
+</a>
 
-  <!-- License -->
-  <a href="https://github.com/codedsultan/fast-ai/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/codedsultan/fast-ai?style=for-the-badge" alt="License Badge"/>
-  </a>
+<a href="https://github.com/codedsultan/fast-ai/blob/main/LICENSE">
+  <img src="https://img.shields.io/github/license/codedsultan/fast-ai?style=for-the-badge" alt="License Badge"/>
+</a>
 
-  <!-- Build / CI -->
-  <a href="https://github.com/codedsultan/fast-ai/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/codedsultan/fast-ai/build.yml?style=for-the-badge&logo=github" alt="CI Badge"/>
-  </a>
+<a href="https://github.com/codedsultan/fast-ai/actions">
+  <img src="https://img.shields.io/github/actions/workflow/status/codedsultan/fast-ai/build.yml?style=for-the-badge&logo=github" alt="CI Badge"/>
+</a>
 
-  <!-- Buy Me a Coffee -->
-  <a href="https://buymeacoffee.com/codesultan">
-    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="BuyMeACoffee Badge"/>
-  </a>
+<a href="https://buymeacoffee.com/codesultan">
+  <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="BuyMeACoffee Badge"/>
+</a>
 
 </p>
+
 
 ---
 
