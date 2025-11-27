@@ -27,7 +27,7 @@ If you run into issues, bugs, or have feature requests:
 or
 📧 **Contact me directly:** [codesultan369@gmail.com](mailto:codesultan369@gmail.com)
 
----
+<!-- ---
 
 <p align="center">
 
@@ -47,7 +47,7 @@ or
   <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-donate-yellow?style=for-the-badge&logo=buy-me-a-coffee" alt="BuyMeACoffee Badge"/>
 </a>
 
-</p>
+</p> -->
 
 
 ---
