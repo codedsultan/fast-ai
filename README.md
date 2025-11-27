@@ -21,7 +21,6 @@ Designed for **containerized deployments**, **GitHub Actions**, and **Ansible or
 
   * LLM providers
   * Content generation modules
-  * SEO tools
   * Image suggestion
   * Calibration + personalization
   * Shared utilities
@@ -44,8 +43,7 @@ aicontent/
 │   ├── celery_app.py           # Celery config
 │   ├── llm/                    # LLM provider abstraction
 │   ├── content/                # Content generation routes + services
-│   ├── images/                 # Image suggestion module
-│   ├── seo/                    # SEO analysis tools
+│   ├── images/                 # Image generation module
 │   ├── calibration/            # Tone/style matching module
 │   ├── utils/                  # Logging, rate limiting, config loader
 │   └── handlers/               # Global error handlers
